@@ -31,3 +31,9 @@ def is_palindrome(input_string):
     #  Checks whether 'input_string' is a string
     if not isinstance(input_string, str):
         raise ValueError(f'{input_string} is not a string')  #  ValueError raised if 'input_string' is not a string
+
+    palindrome = deque(input_string)
+
+    #  Checks whether if 'input_string' is an empty string
+    if not palindrome:
+        return False  #  Returns False if is_palindrome() is called with an empty string

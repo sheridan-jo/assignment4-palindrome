@@ -25,3 +25,7 @@ import pytest
 def test_non_string():
     with pytest.raises(ValueError):
         palindrome.is_palindrome(3.14)  #  This should raise a ValueError
+
+#  Tests if is_palindrome() returns False when called with an empty string
+def test_empty_string():
+    assert palindrome.is_palindrome('') == False  #  Should return False when input is an empty string
