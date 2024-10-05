@@ -44,3 +44,7 @@ def test_input_bb():
 #  Tests if is_palindrome() returns False if called with 'abc'
 def test_input_abc():
     assert is_palindrome('abc') == False  #  Should return False when first and last characters are not the same
+
+#  Tests if is_palindrome() returns True if called with 'laval'
+def test_input_laval():
+    assert is_palindrome('laval') == True  #  Should return True if called with 'laval'
