@@ -48,3 +48,7 @@ def test_input_abc():
 #  Tests if is_palindrome() returns True if called with 'laval'
 def test_input_laval():
     assert is_palindrome('laval') == True  #  Should return True if called with 'laval'
+
+#  Tests if is_palindrome() returns False if called with 'toronto'
+def test_input_toronto():
+    assert is_palindrome('toronto') == False  #  Should return False if called with 'toronto'
