@@ -32,8 +32,13 @@ def is_palindrome(input_string):
     if not isinstance(input_string, str):
         raise ValueError(f'{input_string} is not a string')  #  ValueError raised if 'input_string' is not a string
 
-    palindrome = deque(input_string)
+    #  'input_string' is converted to a deque
+    char_deque = deque(input_string)  #  Contains the characters entered
 
-    #  Checks whether if 'input_string' is an empty string
-    if not palindrome:
+    #  Checks whether an empty string is entered
+    if not char_deque:
         return False  #  Returns False if is_palindrome() is called with an empty string
+
+    #  Checks for single-character input
+    if len(char_deque) == 1:
+        return True

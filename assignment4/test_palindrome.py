@@ -21,6 +21,9 @@ https://google.github.io/styleguide/pyguide.html
 import palindrome
 import pytest
 
+from palindrome import is_palindrome
+
+
 #  Verifies that ValueError is raised for non-string input
 def test_non_string():
     with pytest.raises(ValueError):
@@ -29,3 +32,7 @@ def test_non_string():
 #  Tests if is_palindrome() returns False when called with an empty string
 def test_empty_string():
     assert palindrome.is_palindrome('') == False  #  Should return False when input is an empty string
+
+#  Tests if is_palindrome() returns True if called with "a"
+def test_input_is_a():
+    assert is_palindrome('a') == True
