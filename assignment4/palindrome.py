@@ -42,3 +42,7 @@ def is_palindrome(input_string):
     #  Checks for single-character input
     if len(char_deque) == 1:
         return True
+
+    #  Checks that two characters entered are the same and therefore a palindrome
+    if char_deque[0] == char_deque[1]:
+        return True

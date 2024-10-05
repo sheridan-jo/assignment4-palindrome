@@ -35,4 +35,8 @@ def test_empty_string():
 
 #  Tests if is_palindrome() returns True if called with "a"
 def test_input_is_a():
-    assert is_palindrome('a') == True
+    assert is_palindrome('a') == True  #  Should return true for single-character input
+
+#  Tests if is_palindrome() returns true if called with 'bb'
+def test_input_bb():
+    assert is_palindrome('bb') == True  #  Should return true when two characters are entered and are the same
