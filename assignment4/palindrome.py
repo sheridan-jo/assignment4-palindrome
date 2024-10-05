@@ -2,7 +2,7 @@
 Python Development II
 Assignment 4 - Palindrome Validator
 John O.
-October 4, 2024
+October 5, 2024
 
 This program contains a function that validates whether an input string is a palindrome.
 
@@ -17,6 +17,7 @@ https://google.github.io/styleguide/pyguide.html
 """
 
 from collections import deque
+
 
 def is_palindrome(input_string):
     """
@@ -43,6 +44,16 @@ def is_palindrome(input_string):
     if len(char_deque) == 1:
         return True
 
-    #  Checks that two characters entered are the same and therefore a palindrome
-    if char_deque[0] == char_deque[1]:
-        return True
+    #  Compares characters from the beginning and end of 'char_deque' while it is at least 2 characters in length
+    #  In each iteration, the rightmost and leftmost characters are removed and compared
+    while len(char_deque) >= 2:
+        rightmost_char = char_deque.pop()  #  Rightmost character removed and retrieved
+        leftmost_char = char_deque.popleft()  #  Leftmost character removed and retrieved
+
+        #  Rightmost and leftmost characters are compared
+        #  If at any point the characters do not match, is_palindrome() returns False and the loop terminates
+        if rightmost_char != leftmost_char:
+            return False
+
+    #  If the loop has terminated without any mismatches, the input is a palindrome and the function returns True
+    return True

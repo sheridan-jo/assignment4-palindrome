@@ -3,10 +3,10 @@ Python Development II
 Assignment 4 - Palindrome Validator
 Test Suite for palindrome.py module
 John O.
-October 4, 2024
+October 5, 2024
 
 This test suite ensures that the function, is_palindrome() in the module, palindrome.py, works correctly. It
-verifies that the function returns False if the input string is not a palindrome and true for a wide range
+verifies that the function returns False if the input string is not a palindrome and True for a wide range
 of input, not just specific palindromes. It also verifies that a ValueError is raised with input that is
 not a string.
 
@@ -35,8 +35,12 @@ def test_empty_string():
 
 #  Tests if is_palindrome() returns True if called with "a"
 def test_input_is_a():
-    assert is_palindrome('a') == True  #  Should return true for single-character input
+    assert is_palindrome('a') == True  #  Should return True for single-character input
 
-#  Tests if is_palindrome() returns true if called with 'bb'
+#  Tests if is_palindrome() returns True if called with 'bb'
 def test_input_bb():
-    assert is_palindrome('bb') == True  #  Should return true when two characters are entered and are the same
+    assert is_palindrome('bb') == True  #  Should return True when two characters are entered and are the same
+
+#  Tests if is_palindrome() returns False if called with 'abc'
+def test_input_abc():
+    assert is_palindrome('abc') == False  #  Should return False when first and last characters are not the same
