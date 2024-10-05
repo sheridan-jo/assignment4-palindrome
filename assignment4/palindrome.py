@@ -17,7 +17,7 @@ https://google.github.io/styleguide/pyguide.html
 """
 
 from collections import deque
-
+import re
 
 def is_palindrome(input_string):
     """
@@ -32,6 +32,10 @@ def is_palindrome(input_string):
     #  Checks whether 'input_string' is a string
     if not isinstance(input_string, str):
         raise ValueError(f'{input_string} is not a string')  #  ValueError raised if 'input_string' is not a string
+
+    #  Removes non-alphanumeric characters so that input like spaces or punctuation marks are not a source of mismatch
+    #  Converts input to all lower cases to remove case sensitivity as a potential source of mismatch
+    input_string = re.sub(r'[^a-zA-Z0-9]', '', input_string.lower())
 
     #  'input_string' is converted to a deque
     char_deque = deque(input_string)  #  Contains the characters entered

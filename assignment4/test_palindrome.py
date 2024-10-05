@@ -52,3 +52,7 @@ def test_input_laval():
 #  Tests if is_palindrome() returns False if called with 'toronto'
 def test_input_toronto():
     assert is_palindrome('toronto') == False  #  Should return False if called with 'toronto'
+
+#  Tests if is_palindrome() returns True if called with uppercase and lowercase characters, spaces, and punctuation
+def test_input_with_sentence():
+    assert is_palindrome('Able was I ere I saw Elba.') == True
