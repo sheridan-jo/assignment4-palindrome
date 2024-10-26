@@ -5,9 +5,12 @@ Test Suite for palindrome.py module
 John O.
 October 5, 2024
 
-This test suite ensures that the function, is_palindrome() in the module, palindrome.py, works correctly. It
-verifies that the function returns False if the input string is not a palindrome and True for a wide range
-of input, not just specific palindromes. It also verifies that a ValueError is raised with input that is
+This test suite ensures that the function, is_palindrome()
+in the module, palindrome.py, works correctly. It
+verifies that the function returns False if the input
+string is not a palindrome and True for a wide range
+of input, not just specific palindromes. It also
+verifies that a ValueError is raised with input that is
 not a string.
 
 Usage:
@@ -24,35 +27,36 @@ import pytest
 from palindrome import is_palindrome
 
 
-#  Verifies that ValueError is raised for non-string input
+
 def test_non_string():
+    """Test that a ValueError is raised for non-string input."""
     with pytest.raises(ValueError):
-        palindrome.is_palindrome(3.14)  #  This should raise a ValueError
+        palindrome.is_palindrome(3.14)
 
-#  Tests if is_palindrome() returns False when called with an empty string
 def test_empty_string():
-    assert palindrome.is_palindrome('') == False  #  Should return False when input is an empty string
+    """Test that an empty string returns False."""
+    assert palindrome.is_palindrome('') == False
 
-#  Tests if is_palindrome() returns True if called with "a"
 def test_input_is_a():
-    assert is_palindrome('a') == True  #  Should return True for single-character input
+    """Test that a single character returns True."""
+    assert is_palindrome('a') == True
 
-#  Tests if is_palindrome() returns True if called with 'bb'
 def test_input_bb():
-    assert is_palindrome('bb') == True  #  Should return True when two characters are entered and are the same
+    """Test that a two-character palindrome returns True."""
+    assert is_palindrome('bb') == True
 
-#  Tests if is_palindrome() returns False if called with 'abc'
 def test_input_abc():
-    assert is_palindrome('abc') == False  #  Should return False when first and last characters are not the same
+    """Test that a non-palindrome string returns False."""
+    assert is_palindrome('abc') == False
 
-#  Tests if is_palindrome() returns True if called with 'laval'
 def test_input_laval():
-    assert is_palindrome('laval') == True  #  Should return True if called with 'laval'
+    """Test that a multi-character palindrome returns True."""
+    assert is_palindrome('laval') == True
 
-#  Tests if is_palindrome() returns False if called with 'toronto'
 def test_input_toronto():
-    assert is_palindrome('toronto') == False  #  Should return False if called with 'toronto'
+    """Test that a non-palindrome city name returns False."""
+    assert is_palindrome('toronto') == False
 
-#  Tests if is_palindrome() returns True if called with uppercase and lowercase characters, spaces, and punctuation
 def test_input_with_sentence():
+    """Test that a palindrome sentence with mixed cases and punctuation returns True."""
     assert is_palindrome('Able was I ere I saw Elba.') == True

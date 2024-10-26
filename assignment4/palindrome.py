@@ -29,12 +29,12 @@ def is_palindrome(input_string):
         Returns:
         bool: True if 'input_string' is a palindrome, False if it is not.
     """
-    #  Checks whether 'input_string' is a string
+    #  Raises ValueError if input is not a string
     if not isinstance(input_string, str):
-        raise ValueError(f'{input_string} is not a string')  #  ValueError raised if 'input_string' is not a string
+        raise ValueError(f'{input_string} is not a string')
 
-    #  Removes non-alphanumeric characters so that input like spaces or punctuation marks are not a source of mismatch
-    #  Converts input to all lower cases to remove case sensitivity as a potential source of mismatch
+    #  Removes non-alphanumeric characters
+    #  Converts input to lower case
     input_string = re.sub(r'[^a-zA-Z0-9]', '', input_string.lower())
 
     #  'input_string' is converted to a deque
@@ -48,16 +48,16 @@ def is_palindrome(input_string):
     if len(char_deque) == 1:
         return True
 
-    #  Compares characters from the beginning and end of 'char_deque' while it is at least 2 characters in length
+    #  Compares characters from the beginning and end of 'char_deque'
     #  In each iteration, the rightmost and leftmost characters are removed and compared
     while len(char_deque) >= 2:
         rightmost_char = char_deque.pop()  #  Rightmost character removed and retrieved
         leftmost_char = char_deque.popleft()  #  Leftmost character removed and retrieved
 
         #  Rightmost and leftmost characters are compared
-        #  If at any point the characters do not match, is_palindrome() returns False and the loop terminates
+        #  Returns false if at any point characters do not match
         if rightmost_char != leftmost_char:
             return False
 
-    #  If the loop has terminated without any mismatches, the input is a palindrome and the function returns True
+    #  Function returns True if the loop has terminated with no mismatches
     return True
