@@ -23,11 +23,7 @@ https://google.github.io/styleguide/pyguide.html
 
 import pytest
 import palindrome
-
-
 from palindrome import is_palindrome
-
-
 
 def test_non_string():
     """Test that a ValueError is raised for non-string input."""
