@@ -21,8 +21,9 @@ https://google.github.io/styleguide/pyguide.html
 
 """
 
-import palindrome
 import pytest
+import palindrome
+
 
 from palindrome import is_palindrome
 
@@ -35,28 +36,28 @@ def test_non_string():
 
 def test_empty_string():
     """Test that an empty string returns False."""
-    assert palindrome.is_palindrome('') == False
+    assert palindrome.is_palindrome('') is False
 
 def test_input_is_a():
     """Test that a single character returns True."""
-    assert is_palindrome('a') == True
+    assert is_palindrome('a') is True
 
 def test_input_bb():
     """Test that a two-character palindrome returns True."""
-    assert is_palindrome('bb') == True
+    assert is_palindrome('bb') is True
 
 def test_input_abc():
     """Test that a non-palindrome string returns False."""
-    assert is_palindrome('abc') == False
+    assert is_palindrome('abc') is False
 
 def test_input_laval():
     """Test that a multi-character palindrome returns True."""
-    assert is_palindrome('laval') == True
+    assert is_palindrome('laval') is True
 
 def test_input_toronto():
     """Test that a non-palindrome city name returns False."""
-    assert is_palindrome('toronto') == False
+    assert is_palindrome('toronto') is False
 
 def test_input_with_sentence():
     """Test that a palindrome sentence with mixed cases and punctuation returns True."""
-    assert is_palindrome('Able was I ere I saw Elba.') == True
+    assert is_palindrome('Able was I ere I saw Elba.') is True
