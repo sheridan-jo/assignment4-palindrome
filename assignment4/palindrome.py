@@ -11,6 +11,11 @@ Enter a string as the argument for the is_palindrome() function, and it will ret
 a Boolean value of True or False. A palindrome is a word or sentence that is the
 same both backwards and forwards.
 
+Imports:
+    deque: Used to store the characters entered into is_palindrome() function.
+    re: Used to remove non-alphanumeric characters and replace them with an empty string
+            so that they are not a source of mismatch.
+
 Documented according to Google Style Docstrings
 https://google.github.io/styleguide/pyguide.html
 
@@ -29,6 +34,7 @@ def is_palindrome(input_string):
         Returns:
         bool: True if 'input_string' is a palindrome, False if it is not.
     """
+
     #  Raises ValueError if input is not a string
     if not isinstance(input_string, str):
         raise ValueError(f'{input_string} is not a string')

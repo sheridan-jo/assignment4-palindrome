@@ -16,6 +16,10 @@ not a string.
 Usage:
 Run this test module using pytest.
 
+Imports:
+    pytest: Used to test the palindrome.py module.
+    palindrome: The module containing the is_palindrome() function.
+
 Documented according to Google Style Docstrings
 https://google.github.io/styleguide/pyguide.html
 
